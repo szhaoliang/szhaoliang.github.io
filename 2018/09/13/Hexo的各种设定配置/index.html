@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="备忘录">
 <meta property="og:description" content="一、相关设置 在github上创建一个项目 代码库设置   二、安装Hexo 全局安装命令 npm install hexo-cli -g  初始化Hexo，在一个文件夹内 hexo init  开始体验Hexo hexo g  开启本地服务 hexo server    三、上传至github 配置SSH key 设置Git的user name和E-mail 配置deployment  1. 配">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-19T03:45:58.973Z">
+<meta property="og:updated_time" content="2018-09-19T03:50:38.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo的各种设定配置">
 <meta name="twitter:description" content="一、相关设置 在github上创建一个项目 代码库设置   二、安装Hexo 全局安装命令 npm install hexo-cli -g  初始化Hexo，在一个文件夹内 hexo init  开始体验Hexo hexo g  开启本地服务 hexo server    三、上传至github 配置SSH key 设置Git的user name和E-mail 配置deployment  1. 配">
@@ -321,21 +321,21 @@
 <li>设置Git的<mark>user name</mark>和<mark>E-mail</mark></li>
 <li>配置deployment</li>
 </ol>
-<h6 id="1-配置SSH-key"><a href="#1-配置SSH-key" class="headerlink" title="1. 配置SSH key"></a>1. 配置SSH key</h6><ol>
+<h5 id="1-配置SSH-key"><a href="#1-配置SSH-key" class="headerlink" title="1. 配置SSH key"></a>1. 配置SSH key</h5><ol>
 <li>移动到个人根目录下<code>$ cd ~/.ssh</code> <br></li>
 <li>生成Key，<code>ssh-keygen -t rsa -C “<a href="mailto:xxxxx@yahoo.com" target="_blank" rel="noopener">xxxxx@yahoo.com</a>“</code><br></li>
 <li>打开目录找到刚刚生成的<code>.ssh/id_ras.pub</code>文件，复制文件内容，打开github主页，进入<mark>个人设置</mark> -&gt; <mark>SSH and GPG keys</mark> -&gt; <mark>New SSH key</mark>，将刚刚复制的内容粘贴，title一定要起个吊炸天的，别人看了都怕的，保存。</li>
 <li>测试一下<code>$ ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a> # 邮箱不用改</code></li>
 </ol>
-<h6 id="2-设置Git的user-name和E-mail"><a href="#2-设置Git的user-name和E-mail" class="headerlink" title="2. 设置Git的user name和E-mail"></a>2. 设置Git的<mark>user name</mark>和<mark>E-mail</mark></h6><pre><code>$ git config --global user.name &quot;你的github用户名&quot;
+<h5 id="2-设置Git的user-name和E-mail"><a href="#2-设置Git的user-name和E-mail" class="headerlink" title="2. 设置Git的user name和E-mail"></a>2. 设置Git的<mark>user name</mark>和<mark>E-mail</mark></h5><pre><code>$ git config --global user.name &quot;你的github用户名&quot;
 $ git confit --global user.email &quot;你的github注册邮箱&quot;
-</code></pre><h6 id="3-配置deployment"><a href="#3-配置deployment" class="headerlink" title="3. 配置deployment"></a>3. 配置deployment</h6><p>配置<mark>_config.yml</mark>中的deploy部分<br></p>
+</code></pre><h5 id="3-配置deployment"><a href="#3-配置deployment" class="headerlink" title="3. 配置deployment"></a>3. 配置deployment</h5><p>配置<mark>_config.yml</mark>中的deploy部分<br></p>
 <pre><code>deploy:
   type: git
   repository: git@github.com:用户名/用户名.github.io.git
   branch: master
 </code></pre><p>安装一个插件<br><code>npm install hexo-deployer-git –save</code>然后<br><code>hexo d</code>来部署你的网站。</p>
-<h6 id="4-其他"><a href="#4-其他" class="headerlink" title="4. 其他"></a>4. 其他</h6><pre><code> % hexo
+<h5 id="4-其他"><a href="#4-其他" class="headerlink" title="4. 其他"></a>4. 其他</h5><pre><code> % hexo
 Usage: hexo &lt;command&gt;
 
 Commands:
@@ -538,7 +538,7 @@ or you can check the docs: http://hexo.io/docs/
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、相关设置"><span class="nav-number">1.</span> <span class="nav-text">一、相关设置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">二、安装Hexo</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三、上传至github"><span class="nav-number">3.</span> <span class="nav-text">三、上传至github</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-配置SSH-key"><span class="nav-number">3.1.</span> <span class="nav-text">1. 配置SSH key</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-设置Git的user-name和E-mail"><span class="nav-number">3.2.</span> <span class="nav-text">2. 设置Git的user name和E-mail</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-配置deployment"><span class="nav-number">3.3.</span> <span class="nav-text">3. 配置deployment</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-其他"><span class="nav-number">3.4.</span> <span class="nav-text">4. 其他</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、相关设置"><span class="nav-number">1.</span> <span class="nav-text">一、相关设置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">二、安装Hexo</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三、上传至github"><span class="nav-number">3.</span> <span class="nav-text">三、上传至github</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-配置SSH-key"><span class="nav-number">4.</span> <span class="nav-text">1. 配置SSH key</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-设置Git的user-name和E-mail"><span class="nav-number">5.</span> <span class="nav-text">2. 设置Git的user name和E-mail</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-配置deployment"><span class="nav-number">6.</span> <span class="nav-text">3. 配置deployment</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-其他"><span class="nav-number">7.</span> <span class="nav-text">4. 其他</span></a></li></ol></div>
             
 
           </div>
