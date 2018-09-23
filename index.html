@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="空间买了无数次，最后却都断掉了（舍不得花钱更新），因为有从来不备份的好习惯至今什么都没留下来。听隔壁老王家的小李子说这个不Hexo要钱，免费用。嗯，正正好。">
+<meta name="description" content="空间买了无数次，最后却都断掉了（舍不得花钱更新），因为有从来不备份的好习惯至今什么都没留下来。听隔壁老王家的小李子说这个Hexo不要钱，免费用。嗯，正正好。">
 <meta name="keywords" content="网络，系统，编程，以及各种脑内整理">
 <meta property="og:type" content="website">
 <meta property="og:title" content="备忘录">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="备忘录">
-<meta property="og:description" content="空间买了无数次，最后却都断掉了（舍不得花钱更新），因为有从来不备份的好习惯至今什么都没留下来。听隔壁老王家的小李子说这个不Hexo要钱，免费用。嗯，正正好。">
+<meta property="og:description" content="空间买了无数次，最后却都断掉了（舍不得花钱更新），因为有从来不备份的好习惯至今什么都没留下来。听隔壁老王家的小李子说这个Hexo不要钱，免费用。嗯，正正好。">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="备忘录">
-<meta name="twitter:description" content="空间买了无数次，最后却都断掉了（舍不得花钱更新），因为有从来不备份的好习惯至今什么都没留下来。听隔壁老王家的小李子说这个不Hexo要钱，免费用。嗯，正正好。">
+<meta name="twitter:description" content="空间买了无数次，最后却都断掉了（舍不得花钱更新），因为有从来不备份的好习惯至今什么都没留下来。听隔壁老王家的小李子说这个Hexo不要钱，免费用。嗯，正正好。">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -161,7 +161,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">老人家：“再好的脑瓜子不如个烂笔头子”</p>
+        <p class="site-subtitle">老人常说：“再好的脑瓜子不如个烂笔头子”</p>
       
   </div>
 
@@ -219,6 +219,141 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/22/Shell命令行-ip取得/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="老子皿">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="备忘录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/22/Shell命令行-ip取得/" itemprop="url">Shell命令行_ip取得</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-22T08:55:22+09:00">
+                2018-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="前因后果"><a href="#前因后果" class="headerlink" title="前因后果"></a>前因后果</h4><p>买了个TP-Link的路由器，支持VPN，可是没有固定IP地址。本以为路由器不关IP地址就不会变。没想到啊，没想到，IP地址变的还真欢啊。这可怎么办才好呢（怎么确定外网IP地址呢）？<br><br>搜了一下说什么花生壳之类的动态域名，貌似要收费，那我还不如买个固定IP省事得多。是的，日本这边可以申请固定IP，大概每月7～8千日元。<br><br>最近Python好像很火，又是爬虫，又是人工智能大数据的，各种词各种报道。那就Python写个小程序吧。结果搜了一下，排名靠前的网页都是教人写查看内网IP地址的。搜了搜日本这边的网站，发现命令行更方便，看外网IP的话一行就搞定了，<code>curl inet-ip.info</code>。还有很多这样的网站可以查看自己的IP地址。</p>
+<h4 id="Shell脚本内容"><a href="#Shell脚本内容" class="headerlink" title="Shell脚本内容"></a>Shell脚本内容</h4><pre><code># 永遠に実行、中断したい場合は「Ctrl + c」                                      
+while true;do
+    # inet-ip.info からグローバルIPアドレスを取得、ip.txtに書き込み             
+    # 600秒間隔で更新                                                           
+       curl inet-ip.info &gt; ip.txt; sleep 600; echo &quot;&quot;
+
+    # テスト用コマンド、1秒間隔で日時を出力                                     
+    #    date; sleep 1; echo &quot;&quot;                                                 
+done
+</code></pre><h4 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h4><p><code>sh getip.sh</code></p>
+<p>因为懒多打一个字都不爽，更改文件权限。</p>
+<p><code>chmod +x getip.sh</code></p>
+<p>这样就可以<code>./getip.sh</code>来执行。</p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>这个脚本还不是很完善，我把输出的<mark>ip.txt</mark>文件放到了Dropbox的文件夹内，这样我在任何地方只要查看Dropbox内的文件就知道最新的IP地址了。然后VPN连接上。好像国内用不了Dropbox，看来还要另想办法……</p>
+<h4 id="参考文件"><a href="#参考文件" class="headerlink" title="参考文件"></a>参考文件</h4><p><a href="http://tuz.hatenablog.com/entry/2017/07/20/211647" target="_blank" rel="noopener">先人1，Python</a><br><br><a href="http://it-memo.info/?p=1337" target="_blank" rel="noopener">先人2，Shell循环</a><br><br><a href="https://qiita.com/naoyukisugi/items/558b116fda95e4f4f808" target="_blank" rel="noopener">先人3，Shell权限</a><br><br><a href="https://tech.nikkeibp.co.jp/it/article/COLUMN/20060228/231019/" target="_blank" rel="noopener">先人4，Shell权限</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -883,7 +1018,7 @@ or you can check the docs: http://hexo.io/docs/
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">老子皿</p>
-              <p class="site-description motion-element" itemprop="description">空间买了无数次，最后却都断掉了（舍不得花钱更新），因为有从来不备份的好习惯至今什么都没留下来。听隔壁老王家的小李子说这个不Hexo要钱，免费用。嗯，正正好。</p>
+              <p class="site-description motion-element" itemprop="description">空间买了无数次，最后却都断掉了（舍不得花钱更新），因为有从来不备份的好习惯至今什么都没留下来。听隔壁老王家的小李子说这个Hexo不要钱，免费用。嗯，正正好。</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -893,7 +1028,7 @@ or you can check the docs: http://hexo.io/docs/
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -906,7 +1041,7 @@ or you can check the docs: http://hexo.io/docs/
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -961,7 +1096,7 @@ or you can check the docs: http://hexo.io/docs/
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -1060,6 +1195,13 @@ or you can check the docs: http://hexo.io/docs/
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 
