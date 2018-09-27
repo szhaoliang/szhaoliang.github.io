@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前因后果买了个TP-Link的路由器，支持VPN，可是没有固定IP地址。本以为路由器不关IP地址就不会变。没想到啊，没想到，IP地址变的还真欢啊。这可怎么办才好呢（怎么确定外网IP地址呢）？搜了一下说什么花生壳之类的动态域名，貌似要收费，那我还不如买个固定IP省事得多。是的，日本这边可以申请固定IP，大概每月7～8千日元。最近Python好像很火，又是爬虫，又是人工智能大数据的，各种词各种报道。那">
+<meta name="description" content="1. 前因后果之前简单写了取得IP地址的Shell。这里重新写一个（多加了几行），更“智能”一些的。本来想加上个自动发邮件的功能，这样就不用Dropbox了。不过感觉Postfix设置略微复杂，过几天有时间了再弄。">
 <meta name="keywords" content="command,命令行,shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shell命令行_ip取得">
-<meta property="og:url" content="http://yoursite.com/2018/09/22/Shell命令行-ip取得/index.html">
+<meta property="og:title" content="Shell命令行_ip取得(进阶)">
+<meta property="og:url" content="http://yoursite.com/2018/09/24/Shell命令行-ip取得-进阶/index.html">
 <meta property="og:site_name" content="备忘录">
-<meta property="og:description" content="前因后果买了个TP-Link的路由器，支持VPN，可是没有固定IP地址。本以为路由器不关IP地址就不会变。没想到啊，没想到，IP地址变的还真欢啊。这可怎么办才好呢（怎么确定外网IP地址呢）？搜了一下说什么花生壳之类的动态域名，貌似要收费，那我还不如买个固定IP省事得多。是的，日本这边可以申请固定IP，大概每月7～8千日元。最近Python好像很火，又是爬虫，又是人工智能大数据的，各种词各种报道。那">
+<meta property="og:description" content="1. 前因后果之前简单写了取得IP地址的Shell。这里重新写一个（多加了几行），更“智能”一些的。本来想加上个自动发邮件的功能，这样就不用Dropbox了。不过感觉Postfix设置略微复杂，过几天有时间了再弄。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-23T16:02:59.833Z">
+<meta property="og:updated_time" content="2018-09-26T06:15:42.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shell命令行_ip取得">
-<meta name="twitter:description" content="前因后果买了个TP-Link的路由器，支持VPN，可是没有固定IP地址。本以为路由器不关IP地址就不会变。没想到啊，没想到，IP地址变的还真欢啊。这可怎么办才好呢（怎么确定外网IP地址呢）？搜了一下说什么花生壳之类的动态域名，貌似要收费，那我还不如买个固定IP省事得多。是的，日本这边可以申请固定IP，大概每月7～8千日元。最近Python好像很火，又是爬虫，又是人工智能大数据的，各种词各种报道。那">
+<meta name="twitter:title" content="Shell命令行_ip取得(进阶)">
+<meta name="twitter:description" content="1. 前因后果之前简单写了取得IP地址的Shell。这里重新写一个（多加了几行），更“智能”一些的。本来想加上个自动发邮件的功能，这样就不用Dropbox了。不过感觉Postfix设置略微复杂，过几天有时间了再弄。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/22/Shell命令行-ip取得/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/24/Shell命令行-ip取得-进阶/"/>
 
 
 
 
 
-  <title>Shell命令行_ip取得 | 备忘录</title>
+  <title>Shell命令行_ip取得(进阶) | 备忘录</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/22/Shell命令行-ip取得/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/Shell命令行-ip取得-进阶/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="老子皿">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Shell命令行_ip取得</h1>
+          <h1 class="post-title" itemprop="name headline">Shell命令行_ip取得(进阶)</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-22T08:55:22+09:00">
-                2018-09-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-24T00:59:04+09:00">
+                2018-09-24
               </time>
             
 
@@ -320,22 +320,20 @@
       
 
       
-        <h4 id="前因后果"><a href="#前因后果" class="headerlink" title="前因后果"></a>前因后果</h4><p>买了个TP-Link的路由器，支持VPN，可是没有固定IP地址。本以为路由器不关IP地址就不会变。没想到啊，没想到，IP地址变的还真欢啊。这可怎么办才好呢（怎么确定外网IP地址呢）？<br><br>搜了一下说什么花生壳之类的动态域名，貌似要收费，那我还不如买个固定IP省事得多。是的，日本这边可以申请固定IP，大概每月7～8千日元。<br><br>最近Python好像很火，又是爬虫，又是人工智能大数据的，各种词各种报道。那就Python写个小程序吧。结果搜了一下，排名靠前的网页都是教人写查看内网IP地址的。搜了搜日本这边的网站，发现命令行更方便，看外网IP的话一行就搞定了，<code>curl inet-ip.info</code>。还有很多这样的网站可以查看自己的IP地址。</p>
-<h4 id="Shell脚本内容"><a href="#Shell脚本内容" class="headerlink" title="Shell脚本内容"></a>Shell脚本内容</h4><pre><code># 永遠に実行、中断したい場合は「Ctrl + c」                                      
-while true;do
-    # inet-ip.info からグローバルIPアドレスを取得、ip.txtに書き込み             
-    # 600秒間隔で更新                                                           
-       curl inet-ip.info &gt; ip.txt; sleep 600; echo &quot;&quot;
-
-    # テスト用コマンド、1秒間隔で日時を出力                                     
-    #    date; sleep 1; echo &quot;&quot;                                                 
-done
-</code></pre><h4 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h4><p><code>sh getip.sh</code></p>
-<p>因为懒多打一个字都不爽，更改文件权限。</p>
-<p><code>chmod +x getip.sh</code></p>
-<p>这样就可以<code>./getip.sh</code>来执行。</p>
-<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>这个脚本还不是很完善，我把输出的<mark>ip.txt</mark>文件放到了Dropbox的文件夹内，这样我在任何地方只要查看Dropbox内的文件就知道最新的IP地址了。然后VPN连接上。好像国内用不了Dropbox，看来还要另想办法……</p>
-<h4 id="参考文件"><a href="#参考文件" class="headerlink" title="参考文件"></a>参考文件</h4><p><a href="http://tuz.hatenablog.com/entry/2017/07/20/211647" target="_blank" rel="noopener">先人1，Python</a><br><br><a href="http://it-memo.info/?p=1337" target="_blank" rel="noopener">先人2，Shell循环</a><br><br><a href="https://qiita.com/naoyukisugi/items/558b116fda95e4f4f808" target="_blank" rel="noopener">先人3，Shell权限</a><br><br><a href="https://tech.nikkeibp.co.jp/it/article/COLUMN/20060228/231019/" target="_blank" rel="noopener">先人4，Shell权限</a></p>
+        <h4 id="1-前因后果"><a href="#1-前因后果" class="headerlink" title="1. 前因后果"></a>1. 前因后果</h4><p>之前简单写了取得IP地址的Shell。这里重新写一个（多加了几行），更“智能”一些的。本来想加上个自动发邮件的功能，这样就不用Dropbox了。不过感觉Postfix设置略微复杂，过几天有时间了再弄。</p>
+<a id="more"></a>
+<h4 id="2-Shell脚本内容"><a href="#2-Shell脚本内容" class="headerlink" title="2. Shell脚本内容"></a>2. Shell脚本内容</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 変数tmp</span><br><span class="line">   tmp=0</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 永遠に実行、中断したい場合は「Ctrl + c」</span><br><span class="line">while true;do</span><br><span class="line"><span class="meta">	#</span> inet-ip.info からグローバルIPアドレスを取得、値をglobal_ipに代入</span><br><span class="line">	global_ip=$(curl inet-ip.info)</span><br><span class="line"><span class="meta">	#</span> 取得したグローバルIPはtmpの値と一致か判断</span><br><span class="line">	if [ $global_ip = $tmp ]; then</span><br><span class="line"><span class="meta">		#</span> 一致の場合は</span><br><span class="line">		echo "Same Golbal IP"</span><br><span class="line">	else</span><br><span class="line"><span class="meta">	#</span> 違う場合日時とIPアドレスをip.txtに書き込み</span><br><span class="line">		date &gt;&gt; ../Dropbox/000-ip/ip.txt</span><br><span class="line">		echo $global_ip &gt;&gt; ../Dropbox/000-ip/ip.txt</span><br><span class="line"><span class="meta">		#</span> 新しいIPアドレスをtmpに代入</span><br><span class="line">		tmp=$global_ip</span><br><span class="line">	fi</span><br><span class="line"><span class="meta">	#</span> 600秒後再度実行する</span><br><span class="line">	sleep 600</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<h4 id="3-问题点"><a href="#3-问题点" class="headerlink" title="3. 问题点"></a>3. 问题点</h4><p>同一IP地址长时间不停的访问，导致被禁用了。可以吧间隔时间调的更长一些，例如：7200秒（2小时）。</p>
+<pre><code>% ./getip_V1.sh
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                               Dload  Upload   Total   Spent    Left  Speed
+0     0    0     0    0     0      0      0 --:--:--  0:01:15 --:--:--     0curl: (7) Failed to connect to inet-ip.info port 80: Operation timed out
+./getip_V1.sh: line 9: [: =: unary operator expected
+</code></pre><p>备用的资源</p>
+<p><code>curl ifconfig.co</code></p>
+<p><code>curl ifconfig.me</code></p>
+<p><code>curl httpbin.org/ip</code></p>
+<h4 id="4-参考文献"><a href="#4-参考文献" class="headerlink" title="4. 参考文献"></a>4. 参考文献</h4><p><a href="https://teratail.com/questions/67052" target="_blank" rel="noopener">先人1，shell变量带入</a></p>
 
       
     </div>
@@ -370,8 +368,8 @@ done
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/14/Hexo插入图片，插入/" rel="next" title="Hexo插入图片，插入">
-                <i class="fa fa-chevron-left"></i> Hexo插入图片，插入
+              <a href="/2018/09/22/Shell命令行-ip取得/" rel="next" title="Shell命令行_ip取得">
+                <i class="fa fa-chevron-left"></i> Shell命令行_ip取得
               </a>
             
           </div>
@@ -380,8 +378,8 @@ done
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/24/Shell命令行-ip取得-进阶/" rel="prev" title="Shell命令行_ip取得(进阶)">
-                Shell命令行_ip取得(进阶) <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/25/Mac-OS-postfix邮件发送/" rel="prev" title="Mac OS postfix邮件发送">
+                Mac OS postfix邮件发送 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -514,7 +512,7 @@ done
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前因后果"><span class="nav-number">1.</span> <span class="nav-text">前因后果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shell脚本内容"><span class="nav-number">2.</span> <span class="nav-text">Shell脚本内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行"><span class="nav-number">3.</span> <span class="nav-text">执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文件"><span class="nav-number">5.</span> <span class="nav-text">参考文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-前因后果"><span class="nav-number">1.</span> <span class="nav-text">1. 前因后果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Shell脚本内容"><span class="nav-number">2.</span> <span class="nav-text">2. Shell脚本内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-问题点"><span class="nav-number">3.</span> <span class="nav-text">3. 问题点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-参考文献"><span class="nav-number">4.</span> <span class="nav-text">4. 参考文献</span></a></li></ol></div>
             
 
           </div>
