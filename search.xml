@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[C语言数据结构 C Algorithm Ch. Two]]></title>
+    <url>%2F2018%2F09%2F27%2FC%E8%AF%AD%E8%A8%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-C-Algorithm-Ch-Two%2F</url>
+    <content type="text"><![CDATA[警告本章主要讲scanf()函数。 C语言的条件判断if 与 if-else-if利用scanf()函数读取输入信息用if-else-if写程序switchC语言的循环自增与自减while用break和return从循环中跳出用continue从循环中跳出while循环程序forfor循环程序再来一个while循环整数与浮动小数C语言的型变换指针基础什么事指针指针的意义针对硬件的程序第二章总结学完这一章之后，应该对C语言有了些许的了解，可以自己写一些简单的程序。通过后面的学习，试着自己写一下代码对能力将会有很大的提升。]]></content>
+      <categories>
+        <category>Algorithm</category>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C语言数据结构 C Algorithm Ch.One]]></title>
+    <url>%2F2018%2F09%2F27%2FC%E8%AF%AD%E8%A8%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-C-Algorithm-Ch-One%2F</url>
+    <content type="text"><![CDATA[C语言的基础整理什么是C语言欢迎大家来到历史知识小课堂。C语言诞生于1973年的贝尔实验室，由Dennis M. Ritchie所开发。1983年ANSI（American National Standards Institute）开始制定C语言的标准化，1988年ANSI C标准规格制定完成并延续至今。 C语言学习的意义现今，大多数程序语言都或多或少的参考了C语言的设计，可以说C语言是其他程序语言的基础。 C语言是一款依赖程序员的语言C语言优先处理程序员的代码，所以C语言的程序员需要贴别留意以下几点： XXXXX XXXXX XX XX XX XX XX XX XX XX 以上10点在写C语言程序中常常遇到，望各位注意。 准备C语言编程开始之前，C语言的编译器是非常必要的。根据各自的系统环境准备编译器。 准备一个“.C”结尾的文件任何编辑器都可以，包括Windows自带的记事本。保存文件时将文件的扩展名设为C。例如：Hello.c 代码1234567891011#include &lt;stdio.h&gt;int main()&#123; char charray[] = "最初的"; printf("%s", charray); printf("C语言程序"); return 0;&#125; 编译及执行结果123% gcc -Wall -o 1.1_first ./1.1_first.c% ./1.1_first最初的C语言程序% C语言代码雏形代码记述代码变更变量理解全局变量和局部变量变量定义算数演算代入演算C语言基础语法条件文和真伪判断根据条件文判断判断程序条件结合打印函数第一章总结好烦哦，看来基础理论是学习最大的障碍阻力。如果没有基础，学习一定会变得非常有趣。不过没有基础，后面该怎么学是一个值得思考的问题……]]></content>
+      <categories>
+        <category>Algorithm</category>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[京セラ複合機TASKalfa 6052ci(J) Macにスキャナー]]></title>
+    <url>%2F2018%2F09%2F26%2F%E4%BA%AC%E3%82%BB%E3%83%A9%E8%A4%87%E5%90%88%E6%A9%9FTASKalfa-6052ci-J-Mac%E3%81%AB%E3%82%B9%E3%82%AD%E3%83%A3%E3%83%8A%E3%83%BC%2F</url>
+    <content type="text"><![CDATA[オフィスに新たな複合機京セラTASKalfa 6052ci(J)を導入しました。性能がかなり良くて印刷速度は55ページ／分（カラー）、60ページ／分（白黒）。 が、京セラの公式ページで検索していたところ、Macにサポートしていませんって 参ったな。。。スキャンができないといけない理由は三つあります。 上司に怒られる（心理的痛い） 上司に叱られる（精神的痛い） 上司に殴られる（身体的痛い） よし、自力で解決します。 環境システム：OS X EI Capitan 10.11.6、Server 5.2で管理しています。 1. Server内ユーザとグループを作成スキャン用ユーザなので、サーバで個人フォルダを作成する必要ないです。【无-仅限服务】を選択します。実はグループを作成する必要がないです。。。管理しやすいよう作りました。上で作成したユーザ京セラをグループに加入します。 2. 共有フォルダ作成と設定フォルダ共有サービスをオン、フォルダを追加します。先ほど作成したグループ（或いはユーザ）を追加します。SMBのチェックも忘れずに。共有フォルダSharedはUsersのしたじゃないとアクセス障害があります。 3. 複合機TASKalfa 6052ci(J)設定複合機にログインして本体アドレス帳にクリック、追加します。設定は画像の通りです。ファイルを管理しやすい様、97_Kyosera-Scanを作成しました。因みに下記の設定は複合機本体でもOKです。 4. 結果スキャンしたファイルはちゃんと送信しましたね。良かったです。 日本語が間違ったら、教えて欲しいです。szhaoliang#hotmail.com（#を@にチェンジ）]]></content>
+      <tags>
+        <tag>Scan</tag>
+        <tag>複合機</tag>
+        <tag>Setting</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac OS postfix邮件发送]]></title>
+    <url>%2F2018%2F09%2F25%2FMac-OS-postfix%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%2F</url>
+    <content type="text"><![CDATA[环境 操作系统：macOS High Sierra 10.13.6 Postfix mail_version = 3.2.2 Postfix版本确认方法，在终端下输入命令postconf mail_version]]></content>
+      <tags>
+        <tag>postfix</tag>
+        <tag>command</tag>
+        <tag>命令行</tag>
+        <tag>Mac OS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Shell命令行_ip取得(进阶)]]></title>
+    <url>%2F2018%2F09%2F24%2FShell%E5%91%BD%E4%BB%A4%E8%A1%8C-ip%E5%8F%96%E5%BE%97-%E8%BF%9B%E9%98%B6%2F</url>
+    <content type="text"><![CDATA[1. 前因后果之前简单写了取得IP地址的Shell。这里重新写一个（多加了几行），更“智能”一些的。本来想加上个自动发邮件的功能，这样就不用Dropbox了。不过感觉Postfix设置略微复杂，过几天有时间了再弄。 2. Shell脚本内容123456789101112131415161718192021# 変数tmp tmp=0# 永遠に実行、中断したい場合は「Ctrl + c」while true;do # inet-ip.info からグローバルIPアドレスを取得、値をglobal_ipに代入 global_ip=$(curl inet-ip.info) # 取得したグローバルIPはtmpの値と一致か判断 if [ $global_ip = $tmp ]; then # 一致の場合は echo "Same Golbal IP" else # 違う場合日時とIPアドレスをip.txtに書き込み date &gt;&gt; ../Dropbox/000-ip/ip.txt echo $global_ip &gt;&gt; ../Dropbox/000-ip/ip.txt # 新しいIPアドレスをtmpに代入 tmp=$global_ip fi # 600秒後再度実行する sleep 600done 3. 问题点同一IP地址长时间不停的访问，导致被禁用了。可以吧间隔时间调的更长一些，例如：7200秒（2小时）。 % ./getip_V1.sh % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 0 0 0 0 0 0 0 0 --:--:-- 0:01:15 --:--:-- 0curl: (7) Failed to connect to inet-ip.info port 80: Operation timed out ./getip_V1.sh: line 9: [: =: unary operator expected 备用的资源 curl ifconfig.co curl ifconfig.me curl httpbin.org/ip 4. 参考文献先人1，shell变量带入]]></content>
+      <tags>
+        <tag>command</tag>
+        <tag>命令行</tag>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Shell命令行_ip取得]]></title>
+    <url>%2F2018%2F09%2F22%2FShell%E5%91%BD%E4%BB%A4%E8%A1%8C-ip%E5%8F%96%E5%BE%97%2F</url>
+    <content type="text"><![CDATA[前因后果买了个TP-Link的路由器，支持VPN，可是没有固定IP地址。本以为路由器不关IP地址就不会变。没想到啊，没想到，IP地址变的还真欢啊。这可怎么办才好呢（怎么确定外网IP地址呢）？搜了一下说什么花生壳之类的动态域名，貌似要收费，那我还不如买个固定IP省事得多。是的，日本这边可以申请固定IP，大概每月7～8千日元。最近Python好像很火，又是爬虫，又是人工智能大数据的，各种词各种报道。那就Python写个小程序吧。结果搜了一下，排名靠前的网页都是教人写查看内网IP地址的。搜了搜日本这边的网站，发现命令行更方便，看外网IP的话一行就搞定了，curl inet-ip.info。还有很多这样的网站可以查看自己的IP地址。 Shell脚本内容# 永遠に実行、中断したい場合は「Ctrl + c」 while true;do # inet-ip.info からグローバルIPアドレスを取得、ip.txtに書き込み # 600秒間隔で更新 curl inet-ip.info &gt; ip.txt; sleep 600; echo &quot;&quot; # テスト用コマンド、1秒間隔で日時を出力 # date; sleep 1; echo &quot;&quot; done 执行sh getip.sh 因为懒多打一个字都不爽，更改文件权限。 chmod +x getip.sh 这样就可以./getip.sh来执行。 最后这个脚本还不是很完善，我把输出的ip.txt文件放到了Dropbox的文件夹内，这样我在任何地方只要查看Dropbox内的文件就知道最新的IP地址了。然后VPN连接上。好像国内用不了Dropbox，看来还要另想办法…… 参考文件先人1，Python先人2，Shell循环先人3，Shell权限先人4，Shell权限]]></content>
+      <tags>
+        <tag>command</tag>
+        <tag>命令行</tag>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo插入图片，插入]]></title>
+    <url>%2F2018%2F09%2F14%2FHexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%EF%BC%8C%E6%8F%92%E5%85%A5%2F</url>
+    <content type="text"><![CDATA[先吐槽，再说明。吐槽部分:用了这么多博客系统，还没有一个因为在文章中插入图片搞的这么复杂。 说明部分：以下内容都是在网上搜索来到，感谢先人作出的贡献。本人没有时间去研究这些东西（主要是两点原因：1.懒； 2.不会） 把Hexo博客（主页）内的配置文件 _config.yml 里的 post_asset_folder: 选项设置为 true 在Hexo目录下执行npm install hexo-asset-image –save 安装一个图片插件 在新建文章hexo new 文章名的时候，会随文章一起生成一个同名文件夹 把文章内需要的图片放到文件夹中，在文章中引入图片![](文件夹名/图片名.jpg) hexo clean 清除现有数据库及public文件夹，hexo g生成页面，文章内终于“插入”图片了。 说明部分如果太简单，不理解的话可以参考先人的内容。先人1先人2先人3的插件先人4]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[md编辑格式]]></title>
+    <url>%2F2018%2F09%2F13%2Fmd%E7%BC%96%E8%BE%91%E6%A0%BC%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[Hello ==== I like Apple H1H2H3H4H5H6#H7 (残念！没有H7，最大到H6) 引用内容 引用饮用内容也可以 一点引用 列表 列表 列表 数字列表 数字列表 第一层 1-1. 第二层 表格 1 2 3 只有一个格子 2 最少需要三个- 最少需要三个= 插入图片]]></content>
+      <tags>
+        <tag>setting</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo的各种设定配置]]></title>
+    <url>%2F2018%2F09%2F13%2FHexo%E7%9A%84%E5%90%84%E7%A7%8D%E8%AE%BE%E5%AE%9A%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[一、相关设置 在github上创建一个项目 代码库设置 二、安装Hexo 全局安装命令 npm install hexo-cli -g 初始化Hexo，在一个文件夹内 hexo init 开始体验Hexo hexo g 开启本地服务 hexo server 三、上传至github 配置SSH key 设置Git的user name和E-mail 配置deployment 1. 配置SSH key 移动到个人根目录下$ cd ~/.ssh 生成Key，ssh-keygen -t rsa -C “xxxxx@yahoo.com“ 打开目录找到刚刚生成的.ssh/id_ras.pub文件，复制文件内容，打开github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key，将刚刚复制的内容粘贴，title一定要起个吊炸天的，别人看了都怕的，保存。 测试一下$ ssh -T git@github.com # 邮箱不用改 2. 设置Git的user name和E-mail$ git config --global user.name &quot;你的github用户名&quot; $ git confit --global user.email &quot;你的github注册邮箱&quot; 3. 配置deployment配置_config.yml中的deploy部分 deploy: type: git repository: git@github.com:用户名/用户名.github.io.git branch: master 安装一个插件npm install hexo-deployer-git –save然后hexo d来部署你的网站。 4. 其他 % hexo Usage: hexo &lt;command&gt; Commands: clean Remove generated files and cache. config Get or set configurations. deploy Deploy your website. generate Generate static files. help Get help on a command. init Create a new Hexo folder. list List the information of the site migrate Migrate your site from other system to Hexo. new Create a new post. publish Moves a draft post from _drafts to _posts folder. render Render files with renderer plugins. server Start the server. version Display version information. Global Options: --config Specify config file instead of using _config.yml --cwd Specify the CWD --debug Display all verbose messages in the terminal --draft Display draft posts --safe Disable all plugins and scripts --silent Hide output on console For more help, you can use &apos;hexo help [command]&apos; for the detailed information or you can check the docs: http://hexo.io/docs/ hexo new “title”新建一个文章，进行编辑 hexo clean清楚数据库及public文件夹 hexo g生成静态文件（创造网站） hexo s开启服务，访问http://localhost:400 hexo d部署网站 参考文献 先人1]]></content>
+      <tags>
+        <tag>setting</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F09%2F13%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
