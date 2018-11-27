@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="System,Linux,CentOS 7," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="下载前往CentOS的官网下载，下载页面。本教程使用版本CentOS-7-x86_64-DVD-1708.iso">
+<meta name="keywords" content="System,Linux,CentOS 7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS 7 No.1 安装&amp;基本配置">
+<meta property="og:url" content="http://yoursite.com/2018/10/09/CentOS-7-No-1-安装-基本配置/index.html">
+<meta property="og:site_name" content="备忘录">
+<meta property="og:description" content="下载前往CentOS的官网下载，下载页面。本教程使用版本CentOS-7-x86_64-DVD-1708.iso">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-09T13:01:39.938Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CentOS 7 No.1 安装&amp;基本配置">
+<meta name="twitter:description" content="下载前往CentOS的官网下载，下载页面。本教程使用版本CentOS-7-x86_64-DVD-1708.iso">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/09/CentOS-7-No-1-安装-基本配置/"/>
+
+
+
+
+
+  <title>CentOS 7 No.1 安装&基本配置 | 备忘录</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-126577792-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">备忘录</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">老人常说：“再好的脑瓜子不如个烂笔头子”</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/CentOS-7-No-1-安装-基本配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="老子皿">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="备忘录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CentOS 7 No.1 安装&基本配置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-09T18:02:41+09:00">
+                2018-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/System/" itemprop="url" rel="index">
+                    <span itemprop="name">System</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/System/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/System/Linux/CentOS-7/" itemprop="url" rel="index">
+                    <span itemprop="name">CentOS 7</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>前往CentOS的官网下载，<a href="https://www.centos.org/download/" target="_blank" rel="noopener">下载页面</a>。本教程使用版本<a href="http://ftp.riken.jp/Linux/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso" target="_blank" rel="noopener">CentOS-7-x86_64-DVD-1708.iso</a></p>
+<a id="more"></a>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><h4 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h4><h5 id="1-新增一般用户的命令"><a href="#1-新增一般用户的命令" class="headerlink" title="[1] 新增一般用户的命令"></a>[1] 新增一般用户的命令</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# useradd mao     # 新建一个名为 mao 的用户</span><br><span class="line">[root@localhost ~]# passwd mao      # 设定用户mao的密码</span><br><span class="line">Changing password for user mao.</span><br><span class="line">New UNIX password:                  # 输入想要设定的密码</span><br><span class="line">Retype new UNIX password:#          # 再次输入密码</span><br><span class="line">passwd: all authentication tokens updated successfully.</span><br><span class="line">[root@localhost ~]# exit            # 退出</span><br></pre></td></tr></table></figure>
+<h5 id="2-一般用户登陆，切换成root"><a href="#2-一般用户登陆，切换成root" class="headerlink" title="[2] 一般用户登陆，切换成root"></a>[2] 一般用户登陆，切换成root</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CentOS Linux 7 (Core)</span><br><span class="line">Kernel 3.10.0-693.el7.x86_64 on an x86_64</span><br><span class="line"> </span><br><span class="line">localhost login: maomao             # 输入用户名</span><br><span class="line">password:                           # 输入密码</span><br><span class="line">Last login: Tue May  1 21:31:39 on tty1</span><br><span class="line">[maomao@localhost ~]$ su -          # 切换成root</span><br><span class="line">Password:                           # 输入root用户密码</span><br><span class="line">Last login: Tue May  1 21:47:24 CST 2018 on tty1</span><br><span class="line">[root@localhost ~]#                 # 切换成功</span><br></pre></td></tr></table></figure>
+<h5 id="3-仅指定用户可以切换成root的设定方法。例如仅用户maomao可以切换成root。"><a href="#3-仅指定用户可以切换成root的设定方法。例如仅用户maomao可以切换成root。" class="headerlink" title="[3] 仅指定用户可以切换成root的设定方法。例如仅用户maomao可以切换成root。"></a>[3] 仅指定用户可以切换成root的设定方法。例如仅用户maomao可以切换成root。</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# usermod -G wheel maomao </span><br><span class="line">[root@localhost ~]# vi /etc/pam.d/su</span><br><span class="line"><span class="meta">#</span>%PAM-1.0</span><br><span class="line">auth            sufficient      pam_rootok.so</span><br><span class="line"><span class="meta">#</span> Uncomment the following line to implicitly trust users in the "wheel" group.</span><br><span class="line"><span class="meta">#</span>auth           sufficient      pam_wheel.so trust use_uid</span><br><span class="line"><span class="meta">#</span> Uncomment the following line to require a user to be in the "wheel" group.</span><br><span class="line"><span class="meta">#</span> 把下面的#去掉，将注释解除。</span><br><span class="line">auth            required        pam_wheel.so use_uid</span><br><span class="line">auth            substack        system-auth</span><br><span class="line">auth            include         postlogin</span><br><span class="line">account         sufficient      pam_succeed_if.so uid = 0 use_uid quiet</span><br><span class="line">account         include         system-auth</span><br><span class="line">password        include         system-auth</span><br><span class="line">session         include         system-auth</span><br><span class="line">session         include         postlogin</span><br><span class="line">session         optional        pam_xauth.so</span><br></pre></td></tr></table></figure>
+<p>查看是否生效，验证用户mao是否能切换成root。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CentOS Linux 7 (Core)</span><br><span class="line">Kernel 3.10.0-693.el7.x86_64 on an x86_64</span><br><span class="line"> </span><br><span class="line">localhost login: mao                # 输入用户名</span><br><span class="line">password:                           # 输入密码</span><br><span class="line">[mao@localhost ~]$ su -             # 切换成root</span><br><span class="line">Password:                           # 输入root用户密码</span><br><span class="line">su: Permission denied               # 没有权限</span><br><span class="line">[mao@localhost ~]$                  # 切换失败</span><br></pre></td></tr></table></figure>
+<h5 id="4-发送给root的邮件转送给一般用户。例如转送给用户maomao。"><a href="#4-发送给root的邮件转送给一般用户。例如转送给用户maomao。" class="headerlink" title="[4] 发送给root的邮件转送给一般用户。例如转送给用户maomao。"></a>[4] 发送给root的邮件转送给一般用户。例如转送给用户maomao。</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vi /etc/aliases</span><br><span class="line"><span class="meta">#</span> Person who should get root's mail</span><br><span class="line"><span class="meta">#</span> 把最后一行的＃删除，并将转送用户名更改成maomao</span><br><span class="line">root:          maomao</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 响应更改后的设置</span><br><span class="line">[root@localhost ~]# newaliases</span><br></pre></td></tr></table></figure>
+<h4 id="Firewall-amp-SELinux"><a href="#Firewall-amp-SELinux" class="headerlink" title="Firewall &amp; SELinux"></a>Firewall &amp; SELinux</h4><h4 id="网络设置"><a href="#网络设置" class="headerlink" title="网络设置"></a>网络设置</h4><h5 id="1-设置服务器主机名，设置固定IP地址。设置环境不一样，接口名（Interface）也各不相同，本例的接口名为「enp0s3」。"><a href="#1-设置服务器主机名，设置固定IP地址。设置环境不一样，接口名（Interface）也各不相同，本例的接口名为「enp0s3」。" class="headerlink" title="[1] 设置服务器主机名，设置固定IP地址。设置环境不一样，接口名（Interface）也各不相同，本例的接口名为「enp0s3」。"></a>[1] 设置服务器主机名，设置固定IP地址。设置环境不一样，接口名（Interface）也各不相同，本例的接口名为「enp0s3」。</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 将主机名设置成 centos7</span><br><span class="line">[root@localhost ~]# hostnamectl set-hostname centos7</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 查看装置</span><br><span class="line">[root@centos7 ~]# nmcli d</span><br><span class="line">DEVICE  TYPE      STATE         CONNECTION </span><br><span class="line">enp0s3  ethernet  disconnected  --         </span><br><span class="line">lo      loopback  unmanaged     --         </span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 根据上一命令查到装置名 enp0s3</span><br><span class="line"><span class="meta">#</span> 设置固定IPv4地址 ⇒ nmcli ～ IP地址</span><br><span class="line">[root@centos7 ~]# nmcli c modify enp0s3 ipv4.addresses 10.0.0.2/24 </span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 设置默认网管</span><br><span class="line">[root@centos7 ~]# nmcli c modify enp0s3 ipv4.gateway 10.0.0.1 </span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 设置DNS</span><br><span class="line">[root@centos7 ~]# nmcli c modify enp0s3 ipv4.dns 10.0.0.1 </span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 将IP地址设置为手动分配 (如果用DHCP的话将 "manual" 改成 "auto")</span><br><span class="line">[root@centos7 ~]# nmcli c modify enp0s3 ipv4.method manual </span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 重启接口让设置生效</span><br><span class="line">[root@centos7 ~]# nmcli c down enp0s3; nmcli c up enp0s3 </span><br><span class="line">Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/1)</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 查看设定结果</span><br><span class="line">[root@centos7 ~]# nmcli d show enp0s3 </span><br><span class="line">GENERAL.DEVICE:                         enp0s3</span><br><span class="line">GENERAL.TYPE:                           ethernet</span><br><span class="line">GENERAL.HWADDR:                         08:00:27:FF:27:A3</span><br><span class="line">GENERAL.MTU:                            1500</span><br><span class="line">GENERAL.STATE:                          100 (connected)</span><br><span class="line">GENERAL.CONNECTION:                     enp0s3</span><br><span class="line">GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/1</span><br><span class="line">WIRED-PROPERTIES.CARRIER:               on</span><br><span class="line">IP4.ADDRESS[1]:                         10.0.0.2/24</span><br><span class="line">IP4.ADDRESS[2]:                         10.0.2.15/24</span><br><span class="line">IP4.GATEWAY:                            10.0.2.2</span><br><span class="line">IP4.DNS[1]:                             192.168.0.1</span><br><span class="line">IP4.DNS[2]:                             10.0.0.1</span><br><span class="line">IP6.ADDRESS[1]:                         fe80::dd96:20a6:cf92:1b27/64</span><br><span class="line">IP6.GATEWAY:                            --</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 查看链接</span><br><span class="line">[root@centos7 ~]# ip addr show </span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1</span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 ::1/128 scope host </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000</span><br><span class="line">    link/ether 08:00:27:ff:27:a3 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic enp0s3</span><br><span class="line">       valid_lft 86316sec preferred_lft 86316sec</span><br><span class="line">    inet 10.0.0.2/24 brd 10.0.0.255 scope global enp0s3</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 fe80::dd96:20a6:cf92:1b27/64 scope link </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br></pre></td></tr></table></figure>
+<h5 id="2-IPv6没有必要的话设置无效。"><a href="#2-IPv6没有必要的话设置无效。" class="headerlink" title="[2] IPv6没有必要的话设置无效。"></a>[2] IPv6没有必要的话设置无效。</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 用cat命令查看默认设置</span><br><span class="line">[root@centos7 ~]# cat /etc/default/grub</span><br><span class="line">GRUB_TIMEOUT=5</span><br><span class="line">GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"</span><br><span class="line">GRUB_DEFAULT=saved</span><br><span class="line">GRUB_DISABLE_SUBMENU=true</span><br><span class="line">GRUB_TERMINAL_OUTPUT="console"</span><br><span class="line">GRUB_CMDLINE_LINUX="crashkernel=auto rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet"</span><br><span class="line">GRUB_DISABLE_RECOVERY="true"</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 在第六行后设置</span><br><span class="line">[root@centos7 ~]# vi /etc/default/grub</span><br><span class="line">GRUB_CMDLINE_LINUX="ipv6.disable=1 rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet"</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 设置生效</span><br><span class="line">[root@centos7 ~]# grub2-mkconfig -o /boot/grub2/grub.cfg </span><br><span class="line">[root@centos7 ~]# reboot</span><br></pre></td></tr></table></figure>
+<h5 id="3-以上例子中接口名为「enp0s3」，普通非虚拟的物理服务器的接口名多为-「ethX」。-按照下面的操作方法可将接口名更改为「ethX」。"><a href="#3-以上例子中接口名为「enp0s3」，普通非虚拟的物理服务器的接口名多为-「ethX」。-按照下面的操作方法可将接口名更改为「ethX」。" class="headerlink" title="[3] 以上例子中接口名为「enp0s3」，普通非虚拟的物理服务器的接口名多为 「ethX」。 按照下面的操作方法可将接口名更改为「ethX」。"></a>[3] 以上例子中接口名为「enp0s3」，普通非虚拟的物理服务器的接口名多为 「ethX」。 按照下面的操作方法可将接口名更改为「ethX」。</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 在第六行后设置</span><br><span class="line">[root@centos7 ~]# vi /etc/default/grub</span><br><span class="line">GRUB_CMDLINE_LINUX="net.ifnames=0 rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet"</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 设置生效</span><br><span class="line">[root@centos7 ~]# grub2-mkconfig -o /boot/grub2/grub.cfg </span><br><span class="line">[root@centos7 ~]# reboot </span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 查看设置结果</span><br><span class="line">[root@centos7 ~]# nmcli d</span><br><span class="line">DEVICE  TYPE      STATE         CONNECTION </span><br><span class="line">eth0    ethernet  connected     Wired connection 1</span><br></pre></td></tr></table></figure>
+<h4 id="各服务设置"><a href="#各服务设置" class="headerlink" title="各服务设置"></a>各服务设置</h4><h5 id="1-查看启动中的各项服务"><a href="#1-查看启动中的各项服务" class="headerlink" title="[1] 查看启动中的各项服务"></a>[1] 查看启动中的各项服务</h5><h5 id="2-もし自身の環境で不要なサービスがあれば、以下のようにして停止と自動起動のオフ設定をします。以下の例では-Postfix-を停止に設定しています。なお、サービス名末尾の-service-は省略可能です。"><a href="#2-もし自身の環境で不要なサービスがあれば、以下のようにして停止と自動起動のオフ設定をします。以下の例では-Postfix-を停止に設定しています。なお、サービス名末尾の-service-は省略可能です。" class="headerlink" title="[2] もし自身の環境で不要なサービスがあれば、以下のようにして停止と自動起動のオフ設定をします。以下の例では Postfix を停止に設定しています。なお、サービス名末尾の [.service] は省略可能です。"></a>[2] もし自身の環境で不要なサービスがあれば、以下のようにして停止と自動起動のオフ設定をします。以下の例では Postfix を停止に設定しています。なお、サービス名末尾の [.service] は省略可能です。</h5><h5 id="3-上記-Systemd-サービス以外にも旧式の-SysV-サービスがいくつか残っており、こちらの自動起動設定は-chkconfig-で制御することになります。-最小構成でインストールした場合の-SysV-サービスは以下の-5-つのみです。"><a href="#3-上記-Systemd-サービス以外にも旧式の-SysV-サービスがいくつか残っており、こちらの自動起動設定は-chkconfig-で制御することになります。-最小構成でインストールした場合の-SysV-サービスは以下の-5-つのみです。" class="headerlink" title="[3] 上記 Systemd サービス以外にも旧式の SysV サービスがいくつか残っており、こちらの自動起動設定は chkconfig で制御することになります。 最小構成でインストールした場合の SysV サービスは以下の 5 つのみです。"></a>[3] 上記 Systemd サービス以外にも旧式の SysV サービスがいくつか残っており、こちらの自動起動設定は chkconfig で制御することになります。 最小構成でインストールした場合の SysV サービスは以下の 5 つのみです。</h5><h4 id="系统更新"><a href="#系统更新" class="headerlink" title="系统更新"></a>系统更新</h4><h5 id="1-安装完系统之后，尽量将系统更新到最新版本。"><a href="#1-安装完系统之后，尽量将系统更新到最新版本。" class="headerlink" title="[1] 安装完系统之后，尽量将系统更新到最新版本。"></a>[1] 安装完系统之后，尽量将系统更新到最新版本。</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">[root@cnetos7 ~]# yum -y update </span><br><span class="line">Loaded plugins: fastestmirror</span><br><span class="line">Determining fastest mirrors</span><br><span class="line"> * base: ftp.jaist.ac.jp</span><br><span class="line"> * extras: ftp.jaist.ac.jp</span><br><span class="line"> * updates: ftp.jaist.ac.jp</span><br><span class="line">Resolving Dependencies</span><br><span class="line"><span class="meta">--&gt;</span> Running transaction check</span><br><span class="line"><span class="meta">---&gt;</span> Package NetworkManager.x86_64 1:1.8.0-9.el7 will be updated</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="meta">#</span> 中途省略</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="meta">---&gt;</span> Package yum.noarch 0:3.4.3-154.el7.centos.1 will be an update</span><br><span class="line"><span class="meta">--&gt;</span> Finished Dependency Resolution</span><br><span class="line"> </span><br><span class="line">Dependencies Resolved</span><br><span class="line"> </span><br><span class="line">================================================================================</span><br><span class="line"> Package                      Arch   Version                      Repository</span><br><span class="line">                                                                           Size</span><br><span class="line">================================================================================</span><br><span class="line">Installing:</span><br><span class="line"> grub2                        x86_64 1:2.02-0.65.el7.centos.2     updates  29 k</span><br><span class="line">     replacing  grub2.x86_64 1:2.02-0.64.el7.centos</span><br><span class="line"> grub2-tools                  x86_64 1:2.02-0.65.el7.centos.2     updates 1.8 M</span><br><span class="line">     replacing  grub2-tools.x86_64 1:2.02-0.64.el7.centos</span><br><span class="line"> grub2-tools-extra            x86_64 1:2.02-0.65.el7.centos.2     updates 993 k</span><br><span class="line">     replacing  grub2-tools.x86_64 1:2.02-0.64.el7.centos</span><br><span class="line"> grub2-tools-minimal          x86_64 1:2.02-0.65.el7.centos.2     updates 170 k</span><br><span class="line">     replacing  grub2-tools.x86_64 1:2.02-0.64.el7.centos</span><br><span class="line"> kernel                       x86_64 3.10.0-693.21.1.el7          updates  43 M</span><br><span class="line">Updating:</span><br><span class="line"> NetworkManager               x86_64 1:1.8.0-11.el7_4             updates 1.6 M</span><br><span class="line"> NetworkManager-libnm         x86_64 1:1.8.0-11.el7_4             updates 1.2 M</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="meta">#</span> 中途省略</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"> util-linux                   x86_64 2.23.2-43.el7_4.2            updates 2.0 M</span><br><span class="line"> wpa_supplicant               x86_64 1:2.6-5.el7_4.1              updates 1.2 M</span><br><span class="line"> yum                          noarch 3.4.3-154.el7.centos.1       updates 1.2 M</span><br><span class="line"> </span><br><span class="line">Transaction Summary</span><br><span class="line">================================================================================</span><br><span class="line">Install   5 Packages</span><br><span class="line">Upgrade  87 Packages</span><br><span class="line"> </span><br><span class="line">Total download size: 163 M</span><br><span class="line">Downloading packages:</span><br><span class="line">Delta RPMs disabled because /usr/bin/applydeltarpm not installed.</span><br><span class="line">Public key for NetworkManager-team-1.8.0-11.el7_4.x86_64.rpm is not installed</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">Total                                              5.3 MB/s | 163 MB  00:30     </span><br><span class="line">Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line">Running transaction check</span><br><span class="line">Running transaction test</span><br><span class="line">Transaction test succeeded</span><br><span class="line">Running transaction</span><br><span class="line">  Updating   : libgcc-4.8.5-16.el7_4.2.x86_64                             1/183 </span><br><span class="line">  Updating   : 1:grub2-common-2.02-0.65.el7.centos.2.noarch               2/183 </span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="meta">#</span> 中途省略</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">  Cleanup    : tzdata-2017b-1.el7.noarch                                182/183 </span><br><span class="line">  Cleanup    : libgcc-4.8.5-16.el7.x86_64                               183/183 </span><br><span class="line">  Verifying  : kmod-20-15.el7_4.7.x86_64                                  1/183 </span><br><span class="line">  Verifying  : iwl5150-firmware-8.24.2.2-58.el7_4.noarch                  2/183 </span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="meta">#</span> 中途省略</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">  Verifying  : yum-3.4.3-154.el7.centos.noarch                          182/183 </span><br><span class="line">  Verifying  : cpio-2.11-24.el7.x86_64                                  183/183 </span><br><span class="line"> </span><br><span class="line">Installed:</span><br><span class="line">  grub2.x86_64 1:2.02-0.65.el7.centos.2                                         </span><br><span class="line">  grub2-tools.x86_64 1:2.02-0.65.el7.centos.2                                   </span><br><span class="line">  grub2-tools-extra.x86_64 1:2.02-0.65.el7.centos.2                             </span><br><span class="line">  grub2-tools-minimal.x86_64 1:2.02-0.65.el7.centos.2                           </span><br><span class="line">  kernel.x86_64 0:3.10.0-693.21.1.el7                                           </span><br><span class="line"> </span><br><span class="line">Updated:</span><br><span class="line">  NetworkManager.x86_64 1:1.8.0-11.el7_4                                        </span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="meta">#</span> 中途省略</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">  wpa_supplicant.x86_64 1:2.6-5.el7_4.1                                         </span><br><span class="line">  yum.noarch 0:3.4.3-154.el7.centos.1                                           </span><br><span class="line"> </span><br><span class="line">Replaced:</span><br><span class="line">  grub2.x86_64 1:2.02-0.64.el7.centos grub2-tools.x86_64 1:2.02-0.64.el7.centos</span><br><span class="line"> </span><br><span class="line">Complete!</span><br></pre></td></tr></table></figure>
+<h4 id="镜像管理"><a href="#镜像管理" class="headerlink" title="镜像管理"></a>镜像管理</h4><h4 id="Vim设置"><a href="#Vim设置" class="headerlink" title="Vim设置"></a>Vim设置</h4><h4 id="sudo设置"><a href="#sudo设置" class="headerlink" title="sudo设置"></a>sudo设置</h4><h4 id="Cron设置"><a href="#Cron设置" class="headerlink" title="Cron设置"></a>Cron设置</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/System/" rel="tag"><i class="fa fa-tag"></i> System</a>
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+            <a href="/tags/CentOS-7/" rel="tag"><i class="fa fa-tag"></i> CentOS 7</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/27/C语言数据结构-C-Algorithm-Ch-Two/" rel="next" title="C语言数据结构 C Algorithm Ch. Two">
+                <i class="fa fa-chevron-left"></i> C语言数据结构 C Algorithm Ch. Two
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/14/Education-Zone-Pro-战斗记录/" rel="prev" title="Education Zone Pro 战斗记录">
+                Education Zone Pro 战斗记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">老子皿</p>
+              <p class="site-description motion-element" itemprop="description">空间买了无数次，最后却都断掉了（舍不得花钱更新）。因为有从来不备份的好习惯，至今什么都没留下来。听隔壁老王家的小李子说这个Hexo（Github）不要钱，免费用。嗯，正正好。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载"><span class="nav-number">1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加用户"><span class="nav-number">3.</span> <span class="nav-text">添加用户</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-新增一般用户的命令"><span class="nav-number">3.1.</span> <span class="nav-text">[1] 新增一般用户的命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-一般用户登陆，切换成root"><span class="nav-number">3.2.</span> <span class="nav-text">[2] 一般用户登陆，切换成root</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-仅指定用户可以切换成root的设定方法。例如仅用户maomao可以切换成root。"><span class="nav-number">3.3.</span> <span class="nav-text">[3] 仅指定用户可以切换成root的设定方法。例如仅用户maomao可以切换成root。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-发送给root的邮件转送给一般用户。例如转送给用户maomao。"><span class="nav-number">3.4.</span> <span class="nav-text">[4] 发送给root的邮件转送给一般用户。例如转送给用户maomao。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Firewall-amp-SELinux"><span class="nav-number">4.</span> <span class="nav-text">Firewall &amp; SELinux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络设置"><span class="nav-number">5.</span> <span class="nav-text">网络设置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-设置服务器主机名，设置固定IP地址。设置环境不一样，接口名（Interface）也各不相同，本例的接口名为「enp0s3」。"><span class="nav-number">5.1.</span> <span class="nav-text">[1] 设置服务器主机名，设置固定IP地址。设置环境不一样，接口名（Interface）也各不相同，本例的接口名为「enp0s3」。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-IPv6没有必要的话设置无效。"><span class="nav-number">5.2.</span> <span class="nav-text">[2] IPv6没有必要的话设置无效。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-以上例子中接口名为「enp0s3」，普通非虚拟的物理服务器的接口名多为-「ethX」。-按照下面的操作方法可将接口名更改为「ethX」。"><span class="nav-number">5.3.</span> <span class="nav-text">[3] 以上例子中接口名为「enp0s3」，普通非虚拟的物理服务器的接口名多为 「ethX」。 按照下面的操作方法可将接口名更改为「ethX」。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各服务设置"><span class="nav-number">6.</span> <span class="nav-text">各服务设置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-查看启动中的各项服务"><span class="nav-number">6.1.</span> <span class="nav-text">[1] 查看启动中的各项服务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-もし自身の環境で不要なサービスがあれば、以下のようにして停止と自動起動のオフ設定をします。以下の例では-Postfix-を停止に設定しています。なお、サービス名末尾の-service-は省略可能です。"><span class="nav-number">6.2.</span> <span class="nav-text">[2] もし自身の環境で不要なサービスがあれば、以下のようにして停止と自動起動のオフ設定をします。以下の例では Postfix を停止に設定しています。なお、サービス名末尾の [.service] は省略可能です。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-上記-Systemd-サービス以外にも旧式の-SysV-サービスがいくつか残っており、こちらの自動起動設定は-chkconfig-で制御することになります。-最小構成でインストールした場合の-SysV-サービスは以下の-5-つのみです。"><span class="nav-number">6.3.</span> <span class="nav-text">[3] 上記 Systemd サービス以外にも旧式の SysV サービスがいくつか残っており、こちらの自動起動設定は chkconfig で制御することになります。 最小構成でインストールした場合の SysV サービスは以下の 5 つのみです。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统更新"><span class="nav-number">7.</span> <span class="nav-text">系统更新</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-安装完系统之后，尽量将系统更新到最新版本。"><span class="nav-number">7.1.</span> <span class="nav-text">[1] 安装完系统之后，尽量将系统更新到最新版本。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#镜像管理"><span class="nav-number">8.</span> <span class="nav-text">镜像管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vim设置"><span class="nav-number">9.</span> <span class="nav-text">Vim设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sudo设置"><span class="nav-number">10.</span> <span class="nav-text">sudo设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cron设置"><span class="nav-number">11.</span> <span class="nav-text">Cron设置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">老子皿</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
