@@ -104,9 +104,9 @@
     <url>%2F2018%2F09%2F25%2FMac-OS-postfix%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%2F</url>
     <content type="text"><![CDATA[环境 操作系统：macOS High Sierra 10.13.6 Postfix mail_version = 3.2.2 Postfix版本确认方法，在终端下输入命令postconf mail_version]]></content>
       <tags>
+        <tag>postfix</tag>
         <tag>command</tag>
         <tag>命令行</tag>
-        <tag>postfix</tag>
         <tag>Mac OS</tag>
       </tags>
   </entry>
@@ -115,9 +115,9 @@
     <url>%2F2018%2F09%2F24%2FShell%E5%91%BD%E4%BB%A4%E8%A1%8C-ip%E5%8F%96%E5%BE%97-%E8%BF%9B%E9%98%B6%2F</url>
     <content type="text"><![CDATA[1. 前因后果之前简单写了取得IP地址的Shell。这里重新写一个（多加了几行），更“智能”一些的。本来想加上个自动发邮件的功能，这样就不用Dropbox了。不过感觉Postfix设置略微复杂，过几天有时间了再弄。 2. Shell脚本内容123456789101112131415161718192021# 変数tmp tmp=0# 永遠に実行、中断したい場合は「Ctrl + c」while true;do # inet-ip.info からグローバルIPアドレスを取得、値をglobal_ipに代入 global_ip=$(curl inet-ip.info) # 取得したグローバルIPはtmpの値と一致か判断 if [ $global_ip = $tmp ]; then # 一致の場合は echo "Same Golbal IP" else # 違う場合日時とIPアドレスをip.txtに書き込み date &gt;&gt; ../Dropbox/000-ip/ip.txt echo $global_ip &gt;&gt; ../Dropbox/000-ip/ip.txt # 新しいIPアドレスをtmpに代入 tmp=$global_ip fi # 600秒後再度実行する sleep 600done 3. 问题点同一IP地址长时间不停的访问，导致被禁用了。可以吧间隔时间调的更长一些，例如：7200秒（2小时）。 % ./getip_V1.sh % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 0 0 0 0 0 0 0 0 --:--:-- 0:01:15 --:--:-- 0curl: (7) Failed to connect to inet-ip.info port 80: Operation timed out ./getip_V1.sh: line 9: [: =: unary operator expected 备用的资源 curl ifconfig.co curl ifconfig.me curl httpbin.org/ip 4. 参考文献先人1，shell变量带入]]></content>
       <tags>
-        <tag>shell</tag>
         <tag>command</tag>
         <tag>命令行</tag>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
@@ -125,9 +125,9 @@
     <url>%2F2018%2F09%2F22%2FShell%E5%91%BD%E4%BB%A4%E8%A1%8C-ip%E5%8F%96%E5%BE%97%2F</url>
     <content type="text"><![CDATA[前因后果买了个TP-Link的路由器，支持VPN，可是没有固定IP地址。本以为路由器不关IP地址就不会变。没想到啊，没想到，IP地址变的还真欢啊。这可怎么办才好呢（怎么确定外网IP地址呢）？搜了一下说什么花生壳之类的动态域名，貌似要收费，那我还不如买个固定IP省事得多。是的，日本这边可以申请固定IP，大概每月7～8千日元。最近Python好像很火，又是爬虫，又是人工智能大数据的，各种词各种报道。那就Python写个小程序吧。结果搜了一下，排名靠前的网页都是教人写查看内网IP地址的。搜了搜日本这边的网站，发现命令行更方便，看外网IP的话一行就搞定了，curl inet-ip.info。还有很多这样的网站可以查看自己的IP地址。 Shell脚本内容# 永遠に実行、中断したい場合は「Ctrl + c」 while true;do # inet-ip.info からグローバルIPアドレスを取得、ip.txtに書き込み # 600秒間隔で更新 curl inet-ip.info &gt; ip.txt; sleep 600; echo &quot;&quot; # テスト用コマンド、1秒間隔で日時を出力 # date; sleep 1; echo &quot;&quot; done 执行sh getip.sh 因为懒多打一个字都不爽，更改文件权限。 chmod +x getip.sh 这样就可以./getip.sh来执行。 最后这个脚本还不是很完善，我把输出的ip.txt文件放到了Dropbox的文件夹内，这样我在任何地方只要查看Dropbox内的文件就知道最新的IP地址了。然后VPN连接上。好像国内用不了Dropbox，看来还要另想办法…… 参考文件先人1，Python先人2，Shell循环先人3，Shell权限先人4，Shell权限]]></content>
       <tags>
-        <tag>shell</tag>
         <tag>command</tag>
         <tag>命令行</tag>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>

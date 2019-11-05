@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="shell,command,命令行," />
+  <meta name="keywords" content="command,命令行,shell," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="1. 前因后果之前简单写了取得IP地址的Shell。这里重新写一个（多加了几行），更“智能”一些的。本来想加上个自动发邮件的功能，这样就不用Dropbox了。不过感觉Postfix设置略微复杂，过几天有时间了再弄。">
-<meta name="keywords" content="shell,command,命令行">
+<meta name="keywords" content="command,命令行,shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shell命令行_ip取得(进阶)">
 <meta property="og:url" content="http://yoursite.com/2018/09/24/Shell命令行-ip取得-进阶/index.html">
@@ -365,7 +365,7 @@
       
         <h4 id="1-前因后果"><a href="#1-前因后果" class="headerlink" title="1. 前因后果"></a>1. 前因后果</h4><p>之前简单写了取得IP地址的Shell。这里重新写一个（多加了几行），更“智能”一些的。本来想加上个自动发邮件的功能，这样就不用Dropbox了。不过感觉Postfix设置略微复杂，过几天有时间了再弄。</p>
 <a id="more"></a>
-<h4 id="2-Shell脚本内容"><a href="#2-Shell脚本内容" class="headerlink" title="2. Shell脚本内容"></a>2. Shell脚本内容</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 変数tmp</span><br><span class="line">   tmp=0</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 永遠に実行、中断したい場合は「Ctrl + c」</span><br><span class="line">while true;do</span><br><span class="line"><span class="meta">	#</span> inet-ip.info からグローバルIPアドレスを取得、値をglobal_ipに代入</span><br><span class="line">	global_ip=$(curl inet-ip.info)</span><br><span class="line"><span class="meta">	#</span> 取得したグローバルIPはtmpの値と一致か判断</span><br><span class="line">	if [ $global_ip = $tmp ]; then</span><br><span class="line"><span class="meta">		#</span> 一致の場合は</span><br><span class="line">		echo "Same Golbal IP"</span><br><span class="line">	else</span><br><span class="line"><span class="meta">	#</span> 違う場合日時とIPアドレスをip.txtに書き込み</span><br><span class="line">		date &gt;&gt; ../Dropbox/000-ip/ip.txt</span><br><span class="line">		echo $global_ip &gt;&gt; ../Dropbox/000-ip/ip.txt</span><br><span class="line"><span class="meta">		#</span> 新しいIPアドレスをtmpに代入</span><br><span class="line">		tmp=$global_ip</span><br><span class="line">	fi</span><br><span class="line"><span class="meta">	#</span> 600秒後再度実行する</span><br><span class="line">	sleep 600</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<h4 id="2-Shell脚本内容"><a href="#2-Shell脚本内容" class="headerlink" title="2. Shell脚本内容"></a>2. Shell脚本内容</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 変数tmp</span></span><br><span class="line">   tmp=0</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 永遠に実行、中断したい場合は「Ctrl + c」</span></span><br><span class="line">while true;do</span><br><span class="line"><span class="meta">	#</span><span class="bash"> inet-ip.info からグローバルIPアドレスを取得、値をglobal_ipに代入</span></span><br><span class="line">	global_ip=$(curl inet-ip.info)</span><br><span class="line"><span class="meta">	#</span><span class="bash"> 取得したグローバルIPはtmpの値と一致か判断</span></span><br><span class="line">	if [ $global_ip = $tmp ]; then</span><br><span class="line"><span class="meta">		#</span><span class="bash"> 一致の場合は</span></span><br><span class="line">		echo "Same Golbal IP"</span><br><span class="line">	else</span><br><span class="line"><span class="meta">	#</span><span class="bash"> 違う場合日時とIPアドレスをip.txtに書き込み</span></span><br><span class="line">		date &gt;&gt; ../Dropbox/000-ip/ip.txt</span><br><span class="line">		echo $global_ip &gt;&gt; ../Dropbox/000-ip/ip.txt</span><br><span class="line"><span class="meta">		#</span><span class="bash"> 新しいIPアドレスをtmpに代入</span></span><br><span class="line">		tmp=$global_ip</span><br><span class="line">	fi</span><br><span class="line"><span class="meta">	#</span><span class="bash"> 600秒後再度実行する</span></span><br><span class="line">	sleep 600</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 <h4 id="3-问题点"><a href="#3-问题点" class="headerlink" title="3. 问题点"></a>3. 问题点</h4><p>同一IP地址长时间不停的访问，导致被禁用了。可以吧间隔时间调的更长一些，例如：7200秒（2小时）。</p>
 <pre><code>% ./getip_V1.sh
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -394,11 +394,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/shell/" rel="tag"><i class="fa fa-tag"></i> shell</a>
-          
             <a href="/tags/command/" rel="tag"><i class="fa fa-tag"></i> command</a>
           
             <a href="/tags/命令行/" rel="tag"><i class="fa fa-tag"></i> 命令行</a>
+          
+            <a href="/tags/shell/" rel="tag"><i class="fa fa-tag"></i> shell</a>
           
         </div>
       
