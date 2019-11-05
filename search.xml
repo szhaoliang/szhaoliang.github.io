@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[宇宙図]]></title>
+    <url>%2F2019%2F03%2F04%2F%E5%AE%87%E5%AE%99%E5%9B%B3%2F</url>
+    <content type="text"><![CDATA[打小就喜欢看星星，特别渴望能买个单筒的天文望远镜。长大成人了，工作了，养家了，至今也没能达成这个愿望。只能在网上欣赏欣赏图片，看看视频。一句话，还是不够执着，探索欲还是不够强大。 最近买了一本关于宇宙的入门级杂志单行本《宇宙図》，想从里面找一些童年回忆。虽说是入门级，结果上来就被打脸了……什么夸克（クォーク），基本粒子（素粒子），一下子就把我给整蒙了。这跟小时候的星星，月亮，牛郎织女完全不是一个路子啊。决定好好读一读这本杂志，然后好好研究一下我所爱好的那个“宇宙”。 我们从哪里来？我们到哪里去？（宇宙大爆炸之前是什么？宇宙之外还有什么？）]]></content>
+      <categories>
+        <category>趣味</category>
+        <category>天文学</category>
+        <category>宇宙</category>
+      </categories>
+      <tags>
+        <tag>宇宙</tag>
+        <tag>天文学</tag>
+        <tag>趣味</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SSL/TLSサーバ証明書の取得 httpからhttpsへ]]></title>
     <url>%2F2018%2F11%2F28%2FSSL-TLS%E3%82%B5%E3%83%BC%E3%83%90%E8%A8%BC%E6%98%8E%E6%9B%B8%E3%81%AE%E5%8F%96%E5%BE%97-http%E3%81%8B%E3%82%89https%E3%81%B8%2F</url>
     <content type="text"><![CDATA[Let’s Encrypt の使い方具体的な説明メモは未完成です。 準備なことインストールOSによって異なります。私はMacなので、Homebrewを使用して、Cerbotをインストールします。 12345678910SBJN [三 28 18:03:39] % brew install certbotUpdating Homebrew...==&gt; Auto-updated Homebrew!Updated 1 tap (homebrew/core).==&gt; Updated FormulaenodeWarning: certbot 0.28.0 is already installed and up-to-dateTo reinstall 0.28.0, run `brew reinstall certbot`SBJN [三 28 18:03:50] % インストールがちゃんとできましたね。 テスト実行 と 結果実行してみたら、エラー。。。 12345SBJN [三 28 18:09:28] % certbot The following error was encountered:[Errno 13] Permission denied: '/var/log/letsencrypt'Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.SBJN [三 28 18:09:34] % sudoで再実行します。 123456sudo certbot Password:Saving debug log to /var/log/letsencrypt/letsencrypt.logPlugins selected: Authenticator apache, Installer apacheEnter email address (used for urgent renewal and security notices) (Enter 'c' tocancel): Emailを入力して、(A)greeで規則を同意しないといけないです。 1234567- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -Please read the Terms of Service athttps://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf. You mustagree in order to register with the ACME server athttps://acme-v02.api.letsencrypt.org/directory- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -(A)gree/(C)ancel: まだ何か出て来ました。 1234567- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -Would you be willing to share your email address with the Electronic FrontierFoundation, a founding partner of the Let's Encrypt project and the non-profitorganization that develops Certbot? We'd like to send you email about our workencrypting the web, EFF news, campaigns, and ways to support digital freedom.- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -(Y)es/(N)o: 次は 12No names were found in your configuration files. Please enter in your domainname(s) (comma and/or space separated) (Enter 'c' to cancel): 123456789101112Obtaining a new certificatePerforming the following challenges:http-01 challenge for www.nils.okinawaCleaning up challengesUnable to find a virtual host listening on port 80 which is currently needed for Certbot to prove to the CA that you control your domain. Please add a virtual host for port 80.IMPORTANT NOTES: - Your account credentials have been saved in your Certbot configuration directory at /etc/letsencrypt. You should make a secure backup of this folder now. This configuration directory will also contain certificates and private keys obtained by Certbot so making regular backups of this folder is ideal. DNS設定と準備SSL/TLS サーバ証明書の取得]]></content>
@@ -89,9 +104,9 @@
     <url>%2F2018%2F09%2F25%2FMac-OS-postfix%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%2F</url>
     <content type="text"><![CDATA[环境 操作系统：macOS High Sierra 10.13.6 Postfix mail_version = 3.2.2 Postfix版本确认方法，在终端下输入命令postconf mail_version]]></content>
       <tags>
-        <tag>postfix</tag>
         <tag>command</tag>
         <tag>命令行</tag>
+        <tag>postfix</tag>
         <tag>Mac OS</tag>
       </tags>
   </entry>
@@ -100,9 +115,9 @@
     <url>%2F2018%2F09%2F24%2FShell%E5%91%BD%E4%BB%A4%E8%A1%8C-ip%E5%8F%96%E5%BE%97-%E8%BF%9B%E9%98%B6%2F</url>
     <content type="text"><![CDATA[1. 前因后果之前简单写了取得IP地址的Shell。这里重新写一个（多加了几行），更“智能”一些的。本来想加上个自动发邮件的功能，这样就不用Dropbox了。不过感觉Postfix设置略微复杂，过几天有时间了再弄。 2. Shell脚本内容123456789101112131415161718192021# 変数tmp tmp=0# 永遠に実行、中断したい場合は「Ctrl + c」while true;do # inet-ip.info からグローバルIPアドレスを取得、値をglobal_ipに代入 global_ip=$(curl inet-ip.info) # 取得したグローバルIPはtmpの値と一致か判断 if [ $global_ip = $tmp ]; then # 一致の場合は echo "Same Golbal IP" else # 違う場合日時とIPアドレスをip.txtに書き込み date &gt;&gt; ../Dropbox/000-ip/ip.txt echo $global_ip &gt;&gt; ../Dropbox/000-ip/ip.txt # 新しいIPアドレスをtmpに代入 tmp=$global_ip fi # 600秒後再度実行する sleep 600done 3. 问题点同一IP地址长时间不停的访问，导致被禁用了。可以吧间隔时间调的更长一些，例如：7200秒（2小时）。 % ./getip_V1.sh % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 0 0 0 0 0 0 0 0 --:--:-- 0:01:15 --:--:-- 0curl: (7) Failed to connect to inet-ip.info port 80: Operation timed out ./getip_V1.sh: line 9: [: =: unary operator expected 备用的资源 curl ifconfig.co curl ifconfig.me curl httpbin.org/ip 4. 参考文献先人1，shell变量带入]]></content>
       <tags>
+        <tag>shell</tag>
         <tag>command</tag>
         <tag>命令行</tag>
-        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
@@ -110,9 +125,9 @@
     <url>%2F2018%2F09%2F22%2FShell%E5%91%BD%E4%BB%A4%E8%A1%8C-ip%E5%8F%96%E5%BE%97%2F</url>
     <content type="text"><![CDATA[前因后果买了个TP-Link的路由器，支持VPN，可是没有固定IP地址。本以为路由器不关IP地址就不会变。没想到啊，没想到，IP地址变的还真欢啊。这可怎么办才好呢（怎么确定外网IP地址呢）？搜了一下说什么花生壳之类的动态域名，貌似要收费，那我还不如买个固定IP省事得多。是的，日本这边可以申请固定IP，大概每月7～8千日元。最近Python好像很火，又是爬虫，又是人工智能大数据的，各种词各种报道。那就Python写个小程序吧。结果搜了一下，排名靠前的网页都是教人写查看内网IP地址的。搜了搜日本这边的网站，发现命令行更方便，看外网IP的话一行就搞定了，curl inet-ip.info。还有很多这样的网站可以查看自己的IP地址。 Shell脚本内容# 永遠に実行、中断したい場合は「Ctrl + c」 while true;do # inet-ip.info からグローバルIPアドレスを取得、ip.txtに書き込み # 600秒間隔で更新 curl inet-ip.info &gt; ip.txt; sleep 600; echo &quot;&quot; # テスト用コマンド、1秒間隔で日時を出力 # date; sleep 1; echo &quot;&quot; done 执行sh getip.sh 因为懒多打一个字都不爽，更改文件权限。 chmod +x getip.sh 这样就可以./getip.sh来执行。 最后这个脚本还不是很完善，我把输出的ip.txt文件放到了Dropbox的文件夹内，这样我在任何地方只要查看Dropbox内的文件就知道最新的IP地址了。然后VPN连接上。好像国内用不了Dropbox，看来还要另想办法…… 参考文件先人1，Python先人2，Shell循环先人3，Shell权限先人4，Shell权限]]></content>
       <tags>
+        <tag>shell</tag>
         <tag>command</tag>
         <tag>命令行</tag>
-        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
